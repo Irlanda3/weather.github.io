@@ -1,0 +1,146 @@
+/* Reset default margin and padding, and set background image */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/vintage.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center; /* Horizontally center the container */
+  align-items: center; /* Vertically center the container */
+  height: 100vh; /* Set the body height to viewport height */
+}
+
+/* Style container for weather information */
+.container {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0px 0px 10px rgba(240, 233, 233, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically center content */
+  text-align: center;
+}
+
+/* Style the heading */
+h2 {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-size: 30px;
+  color: teal;
+}
+
+/* Style location input */
+.location-input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: rgba(86, 134, 134, 0.582);
+}
+
+/* Style the input when it's focused */
+.location-input:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: teal; /* Change the border color on focus */
+  box-shadow: 0 0 5px rgba(0, 128, 128, 0.7); /* Add a box shadow on focus */
+}
+
+/* Style the placeholder text */
+.location-input::placeholder {
+  color: #c5dde5; /* Set the color of the placeholder text */
+  font-family: 'Clash Grotesk', sans-serif; 
+  font-weight: 100;
+}
+
+/* Style the forecast button */
+.forecast-btn {
+  background-color: teal;
+  color: white;
+  font-family: 'Clash Grotesk', sans-serif;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border: none;
+  outline: none !important;
+  border-radius: 20px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+/* Define the glow effect on button hover using box-shadow */
+.forecast-btn:hover {
+  box-shadow: 0 0 10px 3px #1e686c; /* Horizontal offset, vertical offset, blur radius, spread radius, and color */
+}
+
+/* Style the disabled button */
+.forecast-btn:disabled {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+  /* Add any other styles you want */
+}
+
+/* Style weather information text */
+.weather-info p {
+  font-weight: 300;
+  font-size: 20px;
+  color: #000000;
+  font-family: 'Clash Grotesk', sans-serif;
+}
+
+/* Define the spinner animation */
+.spinner {
+  width: 100px;
+  height: 100px;
+  border: 8px solid transparent;
+  border-top: 8px solid teal;
+  border-radius: 50%;
+  animation: spin 2s linear infinite, cloud 2s linear infinite;
+  margin: 0 auto;
+}
+
+/* Define the spinning animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Define the cloud animation */
+@keyframes cloud {
+  0%, 100% {
+    background: none;
+    box-shadow: none;
+  }
+  25% {
+    background: transparent;
+    box-shadow: none;
+  }
+  50% {
+    background: transparent;
+    box-shadow: none;
+  }
+  75% {
+    background: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Style the humidity icon */
+.humidity-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* Style error messages */
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+}
